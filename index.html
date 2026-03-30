@@ -7,11 +7,11 @@
     <style>
         html { scroll-behavior: smooth; }
         .hover-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .hover-card:hover { transform: translateY(-10px); shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+        .hover-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
     </style>
     <title>LV One Stop - 拉斯維加斯一站式服務</title>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-gray-50 text-gray-900 font-sans">
 
     <nav class="bg-white/90 backdrop-blur-sm sticky top-0 z-50 p-4 shadow-sm border-b">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
@@ -26,8 +26,85 @@
 
     <section class="py-24 px-4 text-center">
         <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">您在拉斯維加斯的<br><span class="text-blue-600">一站式管家</span></h1>
-        <p class="text-xl text-gray-500 max-w-2xl mx-auto font-light leading-relaxed">提供最地道的華人接待服務，讓旅程更簡單、更安心。</p>
+        <p class="text-xl text-gray-500 max-w-2xl mx-auto font-light leading-relaxed font-sans">提供最地道的華人接待服務，讓旅程更簡單、更安心。</p>
     </section>
 
     <section class="max-w-6xl mx-auto px-4 pb-24">
         <div class="grid md:grid-cols-3 gap-8">
+            
+            <a href="#stays" class="hover-card bg-white rounded-[2.5rem] p-10 shadow-xl border border-gray-100 text-center flex flex-col items-center">
+                <div class="text-6xl mb-6">🏡</div>
+                <h2 class="text-2xl font-black mb-3">優質住宿</h2>
+                <p class="text-gray-400 text-sm mb-6 leading-relaxed">精選別墅、獨立小屋、特色太空艙，給您家的溫馨。</p>
+                <div class="mt-auto bg-blue-600 text-white w-full py-3 rounded-2xl font-bold">進入清單</div>
+            </a>
+
+            <a href="#tours" class="hover-card bg-white rounded-[2.5rem] p-10 shadow-xl border border-gray-100 text-center flex flex-col items-center">
+                <div class="text-6xl mb-6">🚐</div>
+                <h2 class="text-2xl font-black mb-3">旅遊接送</h2>
+                <p class="text-gray-400 text-sm mb-6 leading-relaxed">2024 Sienna 新車，專業機場接送與深度旅遊規劃。</p>
+                <div class="mt-auto bg-gray-900 text-white w-full py-3 rounded-2xl font-bold">了解細節</div>
+            </a>
+
+            <a href="#others" class="hover-card bg-white rounded-[2.5rem] p-10 shadow-xl border border-gray-100 text-center flex flex-col items-center">
+                <div class="text-6xl mb-6">🎯</div>
+                <h2 class="text-2xl font-black mb-3">其他內容</h2>
+                <p class="text-gray-400 text-sm mb-6 leading-relaxed">快遞代收、報稅諮詢、裝修監理，您的在地幫手。</p>
+                <div class="mt-auto bg-gray-100 text-gray-600 w-full py-3 rounded-2xl font-bold">查看更多</div>
+            </a>
+        </div>
+    </section>
+
+    <section id="stays" class="bg-white py-24 px-4 border-t border-gray-100">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="text-3xl">🏠</span>
+                <h3 class="text-3xl font-bold">精選住宿清單</h3>
+            </div>
+            <p class="text-gray-500 mb-10">點擊房源名稱，直接進入 Airbnb 預訂</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="https://www.airbnb.com/rooms/1231644755106173516" target="_blank" class="p-6 bg-gray-50 rounded-2xl hover:bg-blue-50 transition-colors border border-gray-100 font-bold text-blue-600">✨ 全新現代風獨立小屋 →</a>
+                <a href="https://airbnb.com/h/pod1space" target="_blank" class="p-6 bg-gray-50 rounded-2xl hover:bg-blue-50 transition-colors border border-gray-100 font-bold text-blue-600">🚀 特色太空艙 (Pod Space) →</a>
+                <a href="https://airbnb.com/h/lv-masterroomcy" target="_blank" class="p-6 bg-gray-50 rounded-2xl hover:bg-blue-50 transition-colors border border-gray-100 font-bold text-blue-600">💎 豪華主臥 (Master Room) →</a>
+                <a href="https://airbnb.com/h/kingroom1-elpaque" target="_blank" class="p-6 bg-gray-50 rounded-2xl hover:bg-blue-50 transition-colors border border-gray-100 font-bold text-blue-600">🛌 溫馨 King Room →</a>
+                <a href="https://airbnb.com/h/queenroom-1" target="_blank" class="p-6 bg-gray-50 rounded-2xl hover:bg-blue-50 transition-colors border border-gray-100 font-bold text-blue-600">👭 Queen Room 1 & 2 →</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="tours" class="bg-gray-50 py-24 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="flex items-center justify-center gap-3 mb-8">
+                <span class="text-3xl">🚐</span>
+                <h3 class="text-3xl font-bold">專業包車與接機</h3>
+            </div>
+            <div class="bg-white p-8 rounded-[2rem] shadow-sm text-left border border-gray-100">
+                <ul class="space-y-4 text-gray-600">
+                    <li class="flex items-center"><span class="bg-green-100 p-1 rounded-full mr-3 text-green-600">✓</span> <strong>2024 Toyota Sienna:</strong> 全新豪華商務車，空間大，極致清潔。</li>
+                    <li class="flex items-center"><span class="bg-green-100 p-1 rounded-full mr-3 text-green-600">✓</span> <strong>機場接送:</strong> 拉斯維加斯 (LAS) 機場 24h 準時接送。</li>
+                    <li class="flex items-center"><span class="bg-green-100 p-1 rounded-full mr-3 text-green-600">✓</span> <strong>定制旅遊:</strong> 大峽谷、羚羊谷、死亡谷、西峽定制一日遊。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="others" class="py-24 px-4 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="flex items-center justify-center gap-3 mb-12">
+                <span class="text-3xl">🎯</span>
+                <h3 class="text-3xl font-bold">在地綜合服務</h3>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6 font-sans">
+                <div class="p-6 rounded-2xl border border-dashed border-gray-300 hover:border-blue-400 transition-colors text-gray-500">快遞包裹代收</div>
+                <div class="p-6 rounded-2xl border border-dashed border-gray-300 hover:border-blue-400 transition-colors text-gray-500">報稅/諮詢建議</div>
+                <div class="p-6 rounded-2xl border border-dashed border-gray-300 hover:border-blue-400 transition-colors text-gray-500">房屋裝修監理</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-gray-400 text-xs border-t border-gray-100 bg-white">
+        <p>© 2026 LV One Stop | 你的拉斯維加斯一站式管家</p>
+    </footer>
+
+</body>
+</html>
