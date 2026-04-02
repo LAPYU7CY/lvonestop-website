@@ -18,6 +18,14 @@
             transform: translateY(-10px);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
+        .stay-tab {
+            transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .stay-tab-active {
+            background-color: rgb(37 99 235);
+            color: white;
+            box-shadow: 0 10px 25px -12px rgba(37, 99, 235, 0.45);
+        }
     </style>
     <title>LV One Stop - 拉斯維加斯一站式服務</title>
 </head>
@@ -67,18 +75,66 @@
         <div class="max-w-6xl mx-auto">
             <div class="flex items-center gap-3 mb-4">
                 <span class="text-3xl">🏠</span>
-                <h3 class="text-3xl font-bold">精選住宿清單</h3>
+                <h3 class="text-3xl font-bold">優質住宿</h3>
             </div>
-            <p class="text-gray-500 mb-10">點擊房源名稱，直接進入 Airbnb 預訂</p>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <a href="https://airbnb.com/h/pod1space" target="_blank" class="p-6 bg-gray-50 rounded-2xl hover:bg-blue-50 transition-colors border border-gray-100 font-bold text-blue-600">🚀 特色太空艙 (Pod Space) →</a>
-                <a href="https://airbnb.com/h/lv-masterroomcy" target="_blank" class="p-6 bg-gray-50 rounded-2xl hover:bg-blue-50 transition-colors border border-gray-100 font-bold text-blue-600">💎 豪華主臥 (Master Room) →</a>
-                <a href="https://airbnb.com/h/kingroom1-elpaque" target="_blank" class="p-6 bg-gray-50 rounded-2xl hover:bg-blue-50 transition-colors border border-gray-100 font-bold text-blue-600">🛌 溫馨 King Room →</a>
-                <a href="https://airbnb.com/h/queenroom-1" target="_blank" class="p-6 bg-gray-50 rounded-2xl hover:bg-blue-50 transition-colors border border-gray-100 font-bold text-blue-600">👭 Queen Room 1 →</a>
-                <a href="https://airbnb.com/h/queenroom-2" target="_blank" class="p-6 bg-gray-50 rounded-2xl hover:bg-blue-50 transition-colors border border-gray-100 font-bold text-blue-600">👭 Queen Room 2 →</a>
+            <p class="text-gray-500 mb-6 max-w-2xl">短租為<strong class="text-gray-700">房源 A</strong> 內可選房間；長租為另一處獨立物業 <strong class="text-gray-700">房源 B</strong>。</p>
+
+            <div class="flex flex-wrap gap-3 mb-8" role="tablist" aria-label="住宿類型">
+                <button type="button" id="stay-tab-short" role="tab" aria-selected="true" aria-controls="stay-panel-short" class="stay-tab stay-tab-active px-5 py-2.5 rounded-full text-sm font-bold border border-gray-200 bg-white text-gray-700">短租 · 房源 A</button>
+                <button type="button" id="stay-tab-long" role="tab" aria-selected="false" aria-controls="stay-panel-long" class="stay-tab px-5 py-2.5 rounded-full text-sm font-bold border border-gray-200 bg-white text-gray-700">長租 · 房源 B</button>
+            </div>
+
+            <div id="stay-panel-short" role="tabpanel" aria-labelledby="stay-tab-short">
+                <p class="text-gray-500 mb-6">以下 5 間房間皆位於<strong class="text-gray-700">房源 A</strong>，點擊進入 Airbnb 預訂。</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <a href="https://airbnb.com/h/pod1space" target="_blank" rel="noopener noreferrer" class="p-6 bg-gray-50 rounded-2xl hover:bg-blue-50 transition-colors border border-gray-100 font-bold text-blue-600">🚀 特色太空艙 (Pod Space) →</a>
+                    <a href="https://airbnb.com/h/lv-masterroomcy" target="_blank" rel="noopener noreferrer" class="p-6 bg-gray-50 rounded-2xl hover:bg-blue-50 transition-colors border border-gray-100 font-bold text-blue-600">💎 豪華主臥 (Master Room) →</a>
+                    <a href="https://airbnb.com/h/kingroom1-elpaque" target="_blank" rel="noopener noreferrer" class="p-6 bg-gray-50 rounded-2xl hover:bg-blue-50 transition-colors border border-gray-100 font-bold text-blue-600">🛌 溫馨 King Room →</a>
+                    <a href="https://airbnb.com/h/queenroom-1" target="_blank" rel="noopener noreferrer" class="p-6 bg-gray-50 rounded-2xl hover:bg-blue-50 transition-colors border border-gray-100 font-bold text-blue-600">👭 Queen Room 1 →</a>
+                    <a href="https://airbnb.com/h/queenroom-2" target="_blank" rel="noopener noreferrer" class="p-6 bg-gray-50 rounded-2xl hover:bg-blue-50 transition-colors border border-gray-100 font-bold text-blue-600">👭 Queen Room 2 →</a>
+                </div>
+            </div>
+
+            <div id="stay-panel-long" role="tabpanel" aria-labelledby="stay-tab-long" class="hidden">
+                <p class="text-gray-500 mb-6">長租為獨立物業 <strong class="text-gray-700">房源 B</strong>（與房源 A 不同一棟）。補上長租 Airbnb 連結後，訪客即可由此一鍵前往。</p>
+                <!-- 長租房源 B：將下方 href 改為您的 Airbnb 長租頁面，並刪除 onclick -->
+                <a id="stay-long-link" href="#" onclick="return false;" class="block p-8 bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl border border-dashed border-blue-200 hover:border-blue-300 transition-colors">
+                    <div class="text-lg font-black text-gray-900 mb-1">🏠 房源 B · 長租</div>
+                    <div class="text-sm text-gray-500 mb-4">長租 Airbnb 連結待補上</div>
+                    <span class="inline-flex items-center font-bold text-blue-600">前往 Airbnb →</span>
+                </a>
             </div>
         </div>
     </section>
+
+    <script>
+        (function () {
+            var tabShort = document.getElementById('stay-tab-short');
+            var tabLong = document.getElementById('stay-tab-long');
+            var panelShort = document.getElementById('stay-panel-short');
+            var panelLong = document.getElementById('stay-panel-long');
+            if (!tabShort || !tabLong || !panelShort || !panelLong) return;
+            function activate(short) {
+                if (short) {
+                    panelShort.classList.remove('hidden');
+                    panelLong.classList.add('hidden');
+                    tabShort.classList.add('stay-tab-active');
+                    tabLong.classList.remove('stay-tab-active');
+                    tabShort.setAttribute('aria-selected', 'true');
+                    tabLong.setAttribute('aria-selected', 'false');
+                } else {
+                    panelShort.classList.add('hidden');
+                    panelLong.classList.remove('hidden');
+                    tabShort.classList.remove('stay-tab-active');
+                    tabLong.classList.add('stay-tab-active');
+                    tabShort.setAttribute('aria-selected', 'false');
+                    tabLong.setAttribute('aria-selected', 'true');
+                }
+            }
+            tabShort.addEventListener('click', function () { activate(true); });
+            tabLong.addEventListener('click', function () { activate(false); });
+        })();
+    </script>
 
     <section id="tours" class="bg-gray-50 py-24 px-4">
         <div class="max-w-4xl mx-auto text-center">
